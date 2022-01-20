@@ -2,8 +2,14 @@ package com.example.lib_kt
 
 fun main() {
 
-    //lambda函数类型对象
+    //lambda函数类型对象 ,需要那其普通函数类型变成函数类型队形（函数需要引用）
     login("Derry","12345",::responseResult)
+
+    val obj1 = ::responseResult
+    val obj2 = obj1
+
+    login("Derry","12345",obj2)
+
 }
 
 fun responseResult(msg:String, code:Int){
